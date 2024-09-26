@@ -8,6 +8,18 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--  Essential META Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="JJHemmings: Bespoke web design and development">
+  <meta property="og:image" content="{% static 'media/coffee_hero.png'%}">
+  <meta property="og:url" content="https://www.jaimieh.co.uk">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!--  Non-Essential, But Recommended -->
+  <meta property="og:description" content="Offering tour packages for individuals or groups.">
+  <meta property="og:site_name" content="European Travel, Inc.">
+  <meta name="twitter:image:alt" content="Alt text for image">
+  <meta name="description" content="JJHemings - Cornwall Based Django/React Developer, creating beautiful engaging bespoke websites for small to medium enterprises">
   {% endblock %}
 
   {% block extra_meta %}
@@ -27,7 +39,7 @@
   <script src="{% static 'js/nav.js' %}"></script>
   {% endblock %}
 
-  <title>JJHemmings {% block extra_title %}{% endblock %}</title>
+  <title>JJHemmings - Web Design &amp; Development {% block extra_title %}{% endblock %}</title>
 </head>
 <body>
   {% if messages %}

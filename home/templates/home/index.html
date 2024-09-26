@@ -1,23 +1,21 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block extra_title %}
+  | Home
+{% endblock %}
+
+{% block extra_meta %}
+
+{% endblock %}
+
 {% block content %}
 
 {% include 'partials/home-hero.html' %}
-
 {% include 'partials/home-services.html' %}
-
 {% include 'partials/home-growth-tips.html' %}
-
 {% include 'partials/home-testimonials.html' %}
-
 {# {% include 'partials/home-previous-work.html' %} #}
-
 {% include 'partials/home-cta.html' %}
-
-
-
-
-
 
 {% endblock %}
