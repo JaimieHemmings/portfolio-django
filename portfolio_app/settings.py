@@ -15,16 +15,15 @@ SECRET_KEY = os.environ.get("SECRET_KEY",(
   ))
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#if os.environ.get('DEVELOPMENT'):
-#  BEBUG = True
-
-DEBUG = True
+if os.environ.get('DEVELOPMENT'):
+  BEBUG = True
 
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
     ".herokuapp.com",
     "portfolio-temp-3ee066e4ed97.herokuapp.com/",
+    "www.jaimieh.co.uk",
 ]
 
 # Application definition
