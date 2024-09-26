@@ -5,7 +5,6 @@ import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
@@ -154,7 +153,6 @@ USE_I18N = True
 
 USE_TZ = True
 
-
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
@@ -167,8 +165,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles/')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Configure Django App for Heroku.
+# Define CSRF_TRUSTED_ORIGINS to allow POST requests from the following origins
 CSRF_TRUSTED_ORIGINS = [
+    'http://localhost',
+    'http://127.0.0.1',
     'https://jaimieh.co.uk',
     'https://www.jaimieh.co.uk',
 ]
