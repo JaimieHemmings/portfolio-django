@@ -1,0 +1,33 @@
+{% load static %}
+<nav class="lg:max-w-screen-xl flex flex-row flex-wrap justify-between ml-auto mr-auto"
+  role="navigation">
+  <!-- COMPANY LOGO (SVG) -->
+  <div class="flex items-center ml-3">
+    <a href="/">
+      <span class="text-lg font-semibold kufam uppercase">JJ Hemmings</span>
+    </a>
+  </div>
+  <div class="inline-block h-8 mr-3 lg:hidden">
+    <button id="nav_toggle" class="h-full w-full">
+      <svg class="h-full w-auto" xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="#4B5563"
+        viewBox="0 0 256 256">
+        <rect width="256" height="256" fill="none"></rect>
+        <line x1="40" y1="128" x2="216" y2="128" stroke="#4B5563" stroke-linecap="round" stroke-linejoin="round"
+          stroke-width="16"></line>
+        <line x1="40" y1="64" x2="216" y2="64" stroke="#4B5563" stroke-linecap="round" stroke-linejoin="round"
+          stroke-width="16"></line>
+        <line x1="40" y1="192" x2="216" y2="192" stroke="#4B5563" stroke-linecap="round" stroke-linejoin="round"
+          stroke-width="16"></line>
+      </svg>
+    </button>
+  </div>
+  <div id="nav_content"
+    class="w-full hidden py-8 lg:flex lg:w-auto lg:py-0 lg:items-center rounded-br-full shadow-md lg:shadow-none bg-yellow-50">
+    <ul class="flex flex-col ml-auto text-md text-gray-700 font-semibold lg:flex-row">
+      <li class="mx-6 w-mc hover:text-gray-900 mb-4 lg:mb-0">
+        <a href="{% url 'contact' %}">CONTACT</a>
+      </li>
+    </ul>
+  </div>
+  </div>
+</nav>
