@@ -23,7 +23,7 @@ ALLOWED_HOSTS = [
     "localhost",
     ".herokuapp.com",
     "portfolio-temp-3ee066e4ed97.herokuapp.com/",
-    "www.jaimieh.co.uk",
+    "jaimieh.co.uk",
 ]
 
 # Application definition
