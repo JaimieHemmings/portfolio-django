@@ -15,8 +15,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY",(
   ))
 
 # SECURITY WARNING: don't run with debug turned on in production!
-if os.environ.get('DEVELOPMENT'):
-  BEBUG = True
+DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = [
     "127.0.0.1",
@@ -155,18 +154,12 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.2/howto/static-files/
+STATIC_URL = '/static/'
 
-STATIC_ROOT = BASE_DIR / "static"
-
-STATIC_URL = 'static/'
-
-STATICFILES_STORAGE="whitenoise.storage.CompressedManifestStaticFilesStorage"
-
-# Don't store the original (un-hashed filename) version of static files, to reduce slug size:
-# https://whitenoise.readthedocs.io/en/latest/django.html#WHITENOISE_KEEP_ONLY_HASHED_FILES
-WHITENOISE_KEEP_ONLY_HASHED_FILES = True
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles/')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
