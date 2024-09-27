@@ -4,9 +4,8 @@
 {% block content %}
 
     <!-- Start of Blog-->
-    <section class="pt-16 lg:pb-32">
+    <section class="pt-16 lg:pb-32 article-body">
       <article>
-
         <!-- Header section -->
         <div class="relative overflow-hidden lg:rounded-br-full h-1/6 lg:h-130 w-full mb-12 lg:mb-16">
           <!-- Dark overlay -->
@@ -42,9 +41,7 @@
             {{ article.lead_paragraph }}
           </p>
           <!-- Main Article Body-->
-          <p class="mb-4">
-            {{ article.first_content }}
-          </p>
+          {{ article.first_content|safe|linebreaks }}
           <img
             class="mb-12"
             src="{{ article.body_img.url }}"
@@ -53,15 +50,11 @@
           <h2 class="text-xl lg:text-2xl mt-12 mb-4 text-gray-800">
             {{ article.subtitle_one}}
           </h2>
-          <p class="mb-4">
-            {{ article.second_content}}
-          </p>
+          {{ article.second_content|safe|linebreaks }}
           <h2 class="text-xl lg:text-2xl mt-12 mb-4 text-gray-800">
             {{ article.subtitle_two }}
           </h2>
-          <p class="mb-4">
-            {{ article.third_content }}
-          </p>
+          {{ article.third_content|safe|linebreaks }}
           <img
             class="mb-12"
             src="{{ article.body_img_two.url }}"
