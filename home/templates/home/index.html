@@ -15,7 +15,9 @@
 {% include 'partials/home-services.html' %}
 {% include 'partials/home-growth-tips.html' %}
 {% include 'partials/home-testimonials.html' %}
-{# {% include 'partials/home-previous-work.html' %} #}
+  {% if articles %}
+    {% include 'partials/home-previous-work.html' %}
+  {% endif %}
 {% include 'partials/home-cta.html' %}
 
 {% endblock %}

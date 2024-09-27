@@ -1,7 +1,13 @@
 from django.shortcuts import render
+from blog.models import Blog
 
 def index(request):
     """
     View function for the home page.
     """
-    return render(request, 'home/index.html')
+    # Get latest 3 articles
+    articles = Blog.objects.order_by('-date')[:3]
+    context = {
+        'articles': articles,
+    }
+    return render(request, 'home/index.html', context)
