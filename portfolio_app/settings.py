@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     # Project Apps
     "home",
     "contact",
+    "blog",
 ]
 
 MIDDLEWARE = [
