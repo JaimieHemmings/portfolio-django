@@ -15,8 +15,8 @@ DEBUG = True
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
-    "fstop-photography-6e5dee6954eb.herokuapp.com",
-    "fstops.co.uk",
+    "www.jaimieh.couk",
+    "jaimieh.co.uk",
     ".herokuapp.com",
 ]
 
