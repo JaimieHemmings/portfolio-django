@@ -39,18 +39,27 @@
   <script src="{% static 'js/nav.js' %}"></script>
   {% endblock %}
 
-  <title>JJHemmings - Web Design &amp; Development {% block extra_title %}{% endblock %}</title>
-</head>
-<body>
+  <title>
+    JHemmings - Web Design &amp; Development {% block extra_title %}{% endblock %}
+  </title>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-GP5DC9YBBD"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'ad_storage': 'denied',
+      'analytics_storage': 'denied',
+      'wait_for_update': 500,
+    });  
     gtag('js', new Date());
-
     gtag('config', 'G-GP5DC9YBBD');
   </script>
+  <script src="{% static 'js/cookie-consent.js' %}"></script>
+</head>
+<body>
   {% if messages %}
     {% for message in messages %}
     <div class="flex fixed-top {{ message.tags }} bg-green-500 text-white text-sm font-bold px-4 py-3" role="alert">
@@ -72,5 +81,7 @@
 
   {% block postload_js %}
   {% endblock %}
+
+  {% include 'partials/cookie-banner.html' %}
 </body>
 </html>
