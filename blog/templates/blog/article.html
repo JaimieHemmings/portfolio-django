@@ -51,15 +51,26 @@
             {{ article.subtitle_one}}
           </h2>
           {{ article.second_content|safe|linebreaks }}
-          <h2 class="text-xl lg:text-2xl mt-12 mb-4 text-gray-800">
-            {{ article.subtitle_two }}
-          </h2>
-          {{ article.third_content|safe|linebreaks }}
+
           <img
             class="mb-12"
             src="{{ article.body_img_two.url }}"
             alt="{{ article.title }}"
-           > 
+           >
+
+          <h2 class="text-xl lg:text-2xl mt-12 mb-4 text-gray-800">
+            {{ article.subtitle_two }}
+          </h2>
+          {{ article.third_content|safe|linebreaks }}
+
+          {% if article.external_link %}
+            <div class="py-12">
+              <a class="inline-block uppercase font-bold px-5 py-3 lg:px-10 lg:py-4 rounded-tr-3xl text-sm lg:text-base rounded-bl-3xl bg-gray-900 text-yellow-50 hover:bg-gray-700 focus:ring-2 focus:ring-yellow-300"
+              target="_blank"
+              rel=”nofollow”
+              href="{{ article.external_site }}">View Site</a>
+            </div>
+          {% endif %}
         </div>
       </article>
     </section>
