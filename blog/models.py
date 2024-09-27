@@ -25,7 +25,7 @@ class Blog(models.Model):
     third_content = models.TextField()
     thumb_img = models.ImageField(upload_to=get_path)
     body_img_two = models.ImageField(upload_to=get_path)
-
+    external_link = models.URLField(blank=True)
 
 
     def __str__(self):
