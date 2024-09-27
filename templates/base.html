@@ -42,6 +42,15 @@
   <title>JJHemmings - Web Design &amp; Development {% block extra_title %}{% endblock %}</title>
 </head>
 <body>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GP5DC9YBBD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-GP5DC9YBBD');
+  </script>
   {% if messages %}
     {% for message in messages %}
     <div class="flex fixed-top {{ message.tags }} bg-green-500 text-white text-sm font-bold px-4 py-3" role="alert">
