@@ -95,6 +95,7 @@
   </div>
   {% endif %}  
   
+  {% if articles.paginator.num_pages > 1 %}
   <div class="pagination w-full">
     <span class="step-links w-full flex justify-around">
       {% if articles.has_previous %}
@@ -114,4 +115,5 @@
       {% endif %}
     </span>
   </div>
+  {% endif %}
 {% endblock %}

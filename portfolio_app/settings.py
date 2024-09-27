@@ -10,7 +10,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY", "abcdefg")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = 'DEVELOPMENT' in os.environ
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     "127.0.0.1",
