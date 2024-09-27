@@ -194132,3 +194132,9 @@ nav {
 .article-body p {
   margin-bottom: 15px;
 }
+
+a.disabled {
+  pointer-events: none;
+  opacity: 0.7;
+  cursor: not-allowed;
+}
