@@ -15,7 +15,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
-    "www.jaimieh.couk",
+    "www.jaimieh.co.uk",
     "jaimieh.co.uk",
     ".herokuapp.com",
 ]
