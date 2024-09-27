@@ -91,5 +91,25 @@
     <h1 class="text-3xl font-semibold text-gray-700">No articles found</h1>
     <p>There's probably something cooking. Check back soon!</p>
   </div>
-  {% endif %}      
+  {% endif %}  
+  
+  <div class="pagination w-full">
+    <span class="step-links w-full flex justify-around">
+      {% if articles.has_previous %}
+        <a href="?page={{ articles.previous_page_number }}">Previous Page</a>
+      {% else %}
+        <a class="disabled" href="#">Previous Page</a>
+      {% endif %}
+
+      <span class="current">
+          Page {{ articles.number }} of {{ articles.paginator.num_pages }}.
+      </span>
+
+      {% if articles.has_next %}
+        <a href="?page={{ articles.next_page_number }}">Next Page</a>
+      {% else %}
+        <a class="disabled" href="#">Next Page</a>
+      {% endif %}
+    </span>
+  </div>
 {% endblock %}
