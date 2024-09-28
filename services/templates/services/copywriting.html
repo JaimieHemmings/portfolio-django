@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_title %}
+ | Copywriting
+{% endblock %}
+
+{% block content %}
+<section class="bg-yellow-100 py-16 lg:py-32">
+  <div class="container mx-auto">
+    <h1 class="text-3xl lg:text-5xl font-semibold text-center">
+      Copywriting Services
+    </h1>
+    <p class="text-gray-600 text-center mt-2">
+      "Words have power—let’s make yours unforgettable. Our copywriting services craft compelling narratives that engage your audience, boost your brand voice, and drive action. Whether it's website content, blogs, or marketing copy, we ensure every word counts, transforming readers into loyal customers. Let us help you tell your story in a way that truly resonates!"
+    </p>
+  </div>
+</section>
+
+<main class="min-h-screen grid grid-cols-12 container mx-auto px-10 py-14 gap-x-5 place-content-center">
+  <h2 class="col-span-12 lg:col-span-7 font-bold text-3xl md:text-5xl lg:text-6xl self-center leading-3">Copywriting is an art</h2>
+  <p class="col-span-12 mt-5 lg:mt-0 lg:col-span-5 self-center text-gray-700 text-lg">Crafting words that connect, captivate, and convert.</p>
+
+  <article class="col-span-12 grid grid-cols-12 gap-x-5 md:mt-16 xl:mt-10 2xl:mt-5 items-center">
+    <div class="order-2 md:order-1 col-span-12 lg:col-span-7 grid sm:grid-cols-2 gap-7 lg:gap-x-0 md:gap-y-16">
+      <div class="lg:max-w-[80%]">
+        <p class="number flex items-end text-5xl font-bold">
+          1
+          <span class="inline-block bg-red-400 h-1.5 rounded-full w-1.5 mb-1"></span>
+        </p>
+
+        <h2 class="text-xl lg:text-2xl font-bold my-4">
+          Engaging Storytelling</h2>
+        <p class="text-gray-700 text-lg">
+          We believe every brand has a unique story to tell. Our copywriting services are designed to bring your brand's message to life, creating a deep emotional connection with your audience. Whether it’s about your company's journey, your products, or the values you stand for, we craft narratives that stick in your readers' minds, building trust and loyalty.
+        </p>
+      </div>
+      <div class="lg:max-w-[80%]">
+        <p class="number flex items-end text-5xl font-bold">
+          2
+          <span class="inline-block bg-red-400 h-1.5 rounded-full w-1.5 mb-1"></span>
+        </p>
+
+        <h2 class="text-xl lg:text-2xl font-bold mt-4 mb-3">
+          Tailored Content for Every Platform
+        </h2>
+        <p class="text-gray-700 text-lg">
+          Different platforms require different tones, formats, and approaches. We understand the nuances of each, whether it’s website copy that needs to be clear and compelling, blog posts that educate and inform, social media content that drives engagement, or email campaigns that nurture leads. We ensure your message is delivered effectively, wherever your audience may be.
+        </p>
+      </div>
+      <div class="lg:max-w-[80%]">
+        <p class=" number flex items-end text-5xl font-bold">
+          3
+          <span class="inline-block bg-red-400 h-1.5 rounded-full w-1.5 "></span>
+        </p>
+
+        <h2 class="text-xl lg:text-2xl font-bold mt-4 mb-3">
+          SEO-Friendly Writing
+        </h2>
+        <p class="text-gray-700 text-lg">
+          Great content isn’t just about storytelling—it’s about being found. We combine engaging writing with SEO best practices to help your brand rank higher on search engines. Our keyword research and integration methods ensure your content is visible to the people searching for services like yours, increasing organic traffic while maintaining the readability and quality of every piece.
+        </p>
+      </div>
+      <div class="lg:max-w-[80%]">
+        <p class="number flex items-end text-5xl font-bold">
+          4
+          <span class="inline-block bg-red-400 h-1.5 rounded-full w-1.5 -mb-1"></span>
+        </p>
+
+        <h2 class="text-xl lg:text-2xl font-bold mt-4 mb-3">
+          Persuasive and Action-Oriented
+        </h2>
+        <p class="text-gray-700 text-lg">
+          It’s not enough to just engage your readers—you need to inspire them to take action. Our copy is crafted with conversion in mind, using persuasive language that leads your audience towards the next step. Whether it’s making a purchase, signing up for a newsletter, or requesting more information, we help turn interest into tangible results, driving your business growth.
+        </p>
+      </div>
+    </div>
+    <img src="{% static 'media/services/web-design-img.webp' %}" alt="" class="max-w-full aspect-[3/2] lg:aspect-square object-cover col-span-12 my-10 md:mb-0 md:mt-14 lg:my-0 lg:col-span-5 rounded-xl shadow-lg lg:h-full order-1">
+  </article>
+</main>
+
+{% include 'partials/home-cta.html' %}
+{% endblock %}
