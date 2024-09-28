@@ -1,78 +1,78 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block extra_title %} | {{ article.title }} {% endblock %}
 
 {% block content %}
-
-    <!-- Start of Blog-->
-    <section class="pt-16 lg:pb-32 article-body">
-      <article>
-        <!-- Header section -->
-        <div class="relative overflow-hidden lg:rounded-br-full h-1/6 lg:h-130 w-full mb-12 lg:mb-16">
-          <!-- Dark overlay -->
-          <div class="absolute top-0 bottom-0 left-0 right-0 bg-gray-700 opacity-50">
-
-          </div>
-          <!-- Header text -->
-          <div class="absolute h-full w-full flex flex-col items-center justify-center text-gray-800">
-            <div class="opacity-80 p-8 rounded-lg bg-yellow-50">
-              <div class="text-center mb-1 lg:mb-2">
-                <span class="uppercase tracking-wider font-semibold text-xs">
-                  {{ article.category }}
-                </span>
-                <span class="mx-2 lg:mx-3 font-medium">
-                  {{ article.date }}
-                </span>
-              </div>
-              <h1 class="text-4xl lg:text-5xl font-semibold text-center mx-4 lg:mx-0">
-                {{ article.title }}
-              </h1>
+<section
+  class="main-banner wow fadeIn"
+  id="top" data-wow-duration="1s"
+  data-wow-delay="0.5s"
+>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 align-self-center">
+        <div class="left-content show-up header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
+          <div class="row">
+            <div class="col-sm-12">
+              <h1 class="mb-2">{{ article.title }}</h1>
+              <p>{{ article.lead_paragraph }}</p>
             </div>
           </div>
-          <!-- BG image -->
-          <img
-            class="h-full w-full object-cover"
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<article class="section my-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <p>{{ article.category }}</p>
+        <span class="mx-2 lg:mx-3 font-medium">
+          {{ article.date }}
+        </span>
+      </div>
+      <div class="col-sm-12 p-5">
+        <img
+            class="img-fluid rounded-lg shadow-lg"
             src="{{ article.main_img.url }}"
             alt="{{ article.title }}">
-        </div>
-
-        <!-- Blog Article Text -->
-        <div class="max-w-prose mx-6 lg:mx-auto text-gray-600">
-          <p class="mb-12 text-lg lg:text-xl font-semibold text-gray-700">
-            {{ article.lead_paragraph }}
-          </p>
-          <!-- Main Article Body-->
-          {{ article.first_content|safe|linebreaks }}
-          <img
-            class="mb-12"
-            src="{{ article.body_img.url }}"
-            alt="{{ article.title }}"
-           > 
-          <h2 class="text-xl lg:text-2xl mt-12 mb-4 text-gray-800">
-            {{ article.subtitle_one}}
-          </h2>
+      </div>
+      <div class="col-sm-12">
+        {{ article.first_content|safe|linebreaks }}
+      </div>
+      <div class="col-sm-6">
+          <h2 class="my-5">{{ article.subtitle_one}}</h2>
           {{ article.second_content|safe|linebreaks }}
-
-          <img
-            class="mb-12"
-            src="{{ article.body_img_two.url }}"
-            alt="{{ article.title }}"
-           >
-
-          <h2 class="text-xl lg:text-2xl mt-12 mb-4 text-gray-800">
-            {{ article.subtitle_two }}
-          </h2>
-          {{ article.third_content|safe|linebreaks }}
-
-          {% if article.external_link %}
-            <div class="py-12">
-              <a class="inline-block uppercase font-bold px-5 py-3 lg:px-10 lg:py-4 rounded-tr-3xl text-sm lg:text-base rounded-bl-3xl bg-gray-900 text-yellow-50 hover:bg-gray-700 focus:ring-2 focus:ring-yellow-300"
-              target="_blank"
-              rel=”nofollow”
-              href="{{ article.external_link }}">View Site</a>
-            </div>
-          {% endif %}
-        </div>
-      </article>
-    </section>
-    {% include 'partials/home-cta.html' %}
-    {% endblock %}
+      </div>
+      <div class="col-sm-6">
+        <img
+          class="my-5"
+          src="{{ article.body_img.url }}"
+          alt="{{ article.title }}"
+          > 
+      </div>
+      <div class="col-sm-6 mt-3">
+        <img
+        class="mb-3"
+        src="{{ article.body_img_two.url }}"
+        alt="{{ article.title }}"
+       >
+      </div>
+       <div class="col-sm-6">
+        <h2 class="mb-3">
+          {{ article.subtitle_two }}
+        </h2>
+        {{ article.third_content|safe|linebreaks }}
+       </div>
+    </div>
+    {% if article.external_link %}
+    <div class="col-sm-12 my-5 border-button">
+      <a href="{{ article.external_link }}">
+        View Site <i class="fa fa-arrow-right"></i>
+      </a>
+    </div>
+    {% endif %}
+  </div>
+</article>
+{% endblock %}
