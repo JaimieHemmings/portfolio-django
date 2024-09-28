@@ -5,74 +5,8 @@
   | Services
 {% endblock %}
 
+
 {% block content %}
-  <section class="bg-yellow-100 py-16 lg:py-32">
-    <div class="container mx-auto">
-      <h1 class="text-3xl lg:text-5xl font-semibold text-center">
-        High performance website development services
-      </h1>
-      <p class="text-gray-600 text-center mt-2">
-        My web development skills address the need for high performance websites that are fast, secure, and user-friendly. Most importantly, they are custom made to address your business needs.
-      </p>
-    </div>
-  </section>
-  <section class="pt-16 lg:pt-32">
-    <div class="container mx-auto">
-      <div class="grid grid-cols-1">
-
-
-        <div class="flex items-center justify-center shadow-lg my-5 p-3 hover:shadow-xl">
-          <div class="w-1/3 lg-mb-0">
-            <img src="{% static 'media/services/design-image.webp' %}" alt="Services 1" class="w-full rounded-lg">            
-          </div>
-          <div class="w-2/3 lg-mb-0 items-center justify-center flex flex-col px-5">
-            <h2 class="text-2xl lg:text-3xl font-semibold mt-4 text-center">
-              Web Design &amp; Development
-            </h2>
-            <p class="text-gray-600 text-center mt-2 mb-5">
-              Transform your online presence with our tailored web design and development services. We create visually stunning, user-friendly websites that not only look great but are also optimized for performance and functionality. Whether you need a fresh new look, a complete redesign, or custom features to enhance your brand, we’ve got you covered. Let us build a digital experience that engages your audience and helps your business grow.
-            </p>
-            <a
-              class="inline-block uppercase font-bold px-5 py-3 lg:px-10   lg:py-4 rounded-tr-3xl text-sm lg:text-base rounded-bl-3xl bg-gray-900 text-yellow-50 hover:bg-gray-700 focus:ring-2 focus:ring-yellow-300 mb-3"
-              href="{% url 'web_design' %}">Find out more!</a>
-          </div>
-        </div>
-
-        <div class="flex items-center justify-center shadow-lg my-5 p-3 hover:shadow-xl md:flex-row-reverse">
-          <div class="w-1/3 lg-mb-0">
-            <img src="{% static 'media/services/seo-image.webp' %}" alt="An analytics dashboard being displayed" class="w-full rounded-lg">            
-          </div>
-          <div class="w-2/3 lg-mb-0 items-center justify-center flex flex-col px-5">
-            <h2 class="text-2xl lg:text-3xl font-semibold mt-4 text-center">
-              Search Engine Optimisation
-            </h2>
-            <p class="text-gray-600 text-center mt-2 mb-5">
-              Boost your website's visibility and attract more customers with our professional SEO services. We use proven strategies to improve your search engine rankings, drive organic traffic, and help your business stand out online. By optimizing your website with targeted keywords, quality content, and technical enhancements, we ensure your audience finds you quickly and easily.
-            </p>
-            <a
-              class="inline-block uppercase font-bold px-5 py-3 lg:px-10   lg:py-4 rounded-tr-3xl text-sm lg:text-base rounded-bl-3xl bg-gray-900 text-yellow-50 hover:bg-gray-700 focus:ring-2 focus:ring-yellow-300 mb-3"
-              href="{% url 'search_engine_optimisation' %}">Find out more!</a>
-          </div>
-        </div>
-
-        <div class="flex items-center justify-center shadow-lg my-5 p-3 hover:shadow-xl">
-          <div class="w-1/3 lg-mb-0">
-            <img src="{% static 'media/services/copy-image.webp' %}" alt="Services 1" class="w-full rounded-lg">            
-          </div>
-          <div class="w-2/3 lg-mb-0 items-center justify-center flex flex-col px-5">
-            <h2 class="text-2xl lg:text-3xl font-semibold mt-4 text-center">
-              Copywriting
-            </h2>
-            <p class="text-gray-600 text-center mt-2 mb-5">
-              Engage your audience with captivating content that tells your brand story effectively. Our content creation services deliver high-quality, well-crafted articles, blog posts, and social media content tailored to your business needs. We focus on creating compelling, relevant content that boosts your brand's visibility, connects with your audience, and drives meaningful results. Let us help you communicate your message in a way that resonates and keeps your customers coming back for more.
-            </p>
-            <a
-              class="inline-block uppercase font-bold px-5 py-3 lg:px-10   lg:py-4 rounded-tr-3xl text-sm lg:text-base rounded-bl-3xl bg-gray-900 text-yellow-50 hover:bg-gray-700 focus:ring-2 focus:ring-yellow-300 mb-3"
-              href="{% url 'copywriting' %}">Find out more!</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
+{% include 'partials/cards.html' %}
+{% include 'partials/services-expanded.html' %}
 {% endblock %}

@@ -1,0 +1,72 @@
+{% load static %}
+
+<div id="pricing" class="pricing-tables">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+        <div class="section-heading">
+          <h4>We Make Managing Your <em>Digital Presence</em> Look Easy</h4>
+          <img src="{% static 'media/heading-line-dec.png' %}" alt="Decorative Line Image">
+          <p>With our bespoke software solutions and ongoing support you can focus on your business knowing the online stuff is taken care of!</p>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="pricing-item-regular">
+          <h4>Web Design &amp; Development</h4>
+          <div class="icon">
+            <img src="{% static 'media/pricing-table-01.png' %}" alt="">
+          </div>
+          <ul>
+            <li>Server Hosting</li>
+            <li>Media Management</li>
+            <li>SEO optimisations</li>
+            <li>Content Management System</li>
+            <li>Distributed CDN</li>
+            <li>And much more!</li>
+          </ul>
+          <div class="border-button">
+            <a href="{% url 'web_design' %}">More Info</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="pricing-item-pro">
+          <h4>SEO</h4>
+          <div class="icon">
+            <img src="{% static 'media/pricing-table-01.png' %}" alt="">
+          </div>
+          <ul>
+            <li>Integrated Google Analytics</li>
+            <li>Technical SEO</li>
+            <li>Keyword Research</li>
+            <li>Targeted Strategies</li>
+            <li>SEO Optimisation</li>
+            <li>And more!</li>
+          </ul>
+          <div class="border-button">
+            <a href="{% url 'search_engine_optimisation' %}">More Info</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="pricing-item-regular">
+          <h4>Copywriting</h4>
+          <div class="icon">
+            <img src="{% static 'media/pricing-table-01.png' %}" alt="">
+          </div>
+          <ul>
+            <li>Website</li>
+            <li>Marketing</li>
+            <li>Products</li>
+            <li>Meta Tags</li>
+            <li>Blog Articles</li>
+            <li>And so much more...!</li>
+          </ul>
+          <div class="border-button">
+            <a href="{% url 'copywriting' %}">More Info</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 

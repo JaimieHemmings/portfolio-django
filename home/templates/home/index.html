@@ -11,13 +11,9 @@
 
 {% block content %}
 
-{% include 'partials/home-hero.html' %}
-{% include 'partials/home-services.html' %}
-{% include 'partials/home-growth-tips.html' %}
-{% include 'partials/home-testimonials.html' %}
-  {% if articles %}
-    {% include 'partials/home-previous-work.html' %}
-  {% endif %}
-{% include 'partials/home-cta.html' %}
+{% include 'partials/preload.html' %}
+{% include 'partials/main-banner.html' %}
+{% include 'partials/services.html' %}
+{% include 'partials/about-us.html' %}
 
 {% endblock %}

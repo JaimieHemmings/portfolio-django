@@ -15,6 +15,12 @@
   <meta property="og:url" content="https://www.jaimieh.co.uk">
   <meta name="twitter:card" content="summary_large_image">
 
+  <!--New Design Meta-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <!--End of new design meta-->
+
   <!--  Non-Essential, But Recommended -->
   <meta property="og:description" content="Tailored web development packages to drive customer retention, engagement and optimise SEO results">
   <meta property="og:site_name" content="JJHemings Web Design &amp; Development">
@@ -28,15 +34,28 @@
   {% block extra_js %}
   {% endblock %}
 
-  {% block core_css %}
-  <link rel="stylesheet" href="{% static 'css/tailwind.css' %}" />
-  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Kufam:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  {% block core_css %}   
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+  <!-- Additional CSS -->
+  <link
+    rel="stylesheet" 
+    href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+    crossorigin="anonymous"
+    >
+    <link
+      rel="stylesheet"
+      href="{% static 'css/index.css'%}">
+    <link
+      rel="stylesheet"
+      href="{% static 'css/animated.css' %}"
+    >
+    <link
+      rel="stylesheet"
+      href="{% static 'css/owl.css' %}"
+    >
   {% endblock %}
 
   {% block core_js %}
-  <script src="{% static 'js/nav.js' %}"></script>
   {% endblock %}
 
   <title>
@@ -60,6 +79,9 @@
   <script src="{% static 'js/cookie-consent.js' %}"></script>
 </head>
 <body>
+  
+  {% include 'partials/nav.html' %}
+  {% include 'partials/modal.html' %}
   {% if messages %}
     {% for message in messages %}
     <div class="flex fixed-top {{ message.tags }} bg-green-500 text-white text-sm font-bold px-4 py-3" role="alert">
@@ -68,12 +90,6 @@
     </div>
     {% endfor %}
   {% endif %}
-
- 
-
-
-  {% include 'partials/nav.html' %}
-
   {% block content %}
   {% endblock %}
 
@@ -83,5 +99,12 @@
   {% endblock %}
 
   {% include 'partials/cookie-banner.html' %}
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'js/owl-carousel.js' %}"></script>
+  <script src="{% static 'js/animation.js' %}"></script>
+  <script src="{% static 'js/imagesloaded.js' %}"></script>
+  <script src="{% static 'js/popup.js' %}"></script>
+  <script src="{% static 'js/custom.js' %}"></script>
 </body>
 </html>
