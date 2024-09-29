@@ -3,17 +3,19 @@
 {% block extra_title %} | Oops! 400 Error!{% endblock%}
 
 {% block content %}
-  <section class="pt-16 lg:pt-32">
-    <div class="flex flex-col items-center">
-      <h1 class="text-4xl lg:text-5xl font-semibold text-center mb-8">
-        400 Error
-      </h1>
-      <p class="text-lg lg:text-xl text-gray-600 text-center">
-        That wasn't supposed to happen. Please try again later.
-      </p>
-      <a href="{% url 'home' %}" class="mt-8 bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600 transition-all duration-300">
-        Go back to the home page
-      </a>
+<div id="pricing" class="pricing-tables">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+        <div class="section-heading">
+          <h1>400</h1>
+          <img src="{% static 'media/heading-line-dec.png' %}" alt="Decorative Line Image">
+          <p class="text-gray-600 text-center mt-2">
+            Oops! Something went wrong. Please try again later.
+          </p>
+        </div>
+      </div>
     </div>
-  </section>
+  </div>
+</div>
 {% endblock %}
