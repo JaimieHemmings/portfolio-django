@@ -9,7 +9,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("SECRET_KEY", "abcdefg")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+if "Use_AWS" in os.environ:
+    DEBUG = False
+else:
+    DEBUG = True
 
 ALLOWED_HOSTS = [
     "127.0.0.1",
