@@ -1,0 +1,59 @@
+{% extends 'control_panel_base.html' %}
+
+{% block extra_title %} - Control Panel{% endblock %}
+
+{% block content %}
+<div class="row">
+<div class="col-sm-12 d-flex">
+  <div class="card flex-fill">
+    <div class="card-header">
+      <h1 class="card-title mb-0">All Messages</h1>
+    </div>
+    <table class="table table-hover my-0">
+      <thead>
+        <tr>
+          <th>From</th>
+          <th>Email</th>
+          <th>Date</th>
+          <th>Content</th>
+          <th>Status</th>
+          <th>Actions</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% if all_messages %}
+        {% for message in all_messages %}
+        <tr>
+          <td>{{ message.name }}</td>
+          <td>{{ message.email }}</td>
+          <td>{{ message.created_at|date:"d-M/y" }}</td>
+          <td>{{ message.message|truncatechars:50 }}...</td>
+
+          <td>
+            {% if message.read == True %}
+            <a href="{% url 'toggle_message_read' message.id %}" class="badge bg-primary">Mark Unread</a>
+            {% else %}
+            <a href="{% url 'toggle_message_read' message.id %}" class="badge bg-warning">Mark Read</a>
+            {% endif %}
+          </td>
+          <td>
+            <a href="#" class="badge bg-secondary">View</a>
+          </td>
+          <td>
+            <a href="#" class="badge bg-danger">Delete</a>
+          </td>
+        </tr>
+        {% endfor %}
+        {% else %}
+        <tr>
+          <td colspan="5">No messages found</td>
+        </tr>
+        {% endif %}
+      </tbody>
+    </table>
+    <a href="{% url 'view_messages' %}" class="card-footer d-block text-center text-dark small font-weight-bold">View All</a>
+  </div>
+</div>
+</div>
+{% endblock %}
