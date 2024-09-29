@@ -2,55 +2,31 @@
 {% load static %}
 {% block title %} | Contact{% endblock %}
 {% block content %}
-
-<section class="relative lg:h-screen">
-  <!-- Start of 'Contact' Landing -->
-  <section class="pt-16">
-    <!-- Contact Info + Form Container -->
-    <div class="w-full lg:flex bg-white">
-      {% include 'partials/contact-form-left.html' %}
-      <!-- Contact Form -->
-      <div class="flex-grow justify-center bg-white px-8 lg:px-20 py-20 lg:py-48">
-        <div class="flex justify-center">
-          <div>
-            <h2 class="text-xl lg:text-xl font-medium mb-1 text-gray-700">Have a Question?</h2>
-            <span class="text-sm mb-4 text-gray-400">Pop us a message and we'll get in touch.</span>
-            <form method="POST" action="{% url 'contact' %}" class="contact-form">
-              {% csrf_token %}
-              {% for field in form %}
-                {{ field }}
-              {% endfor %}
-              <button type="submit" id="submit-button"
-                class="w-full font-semibold rounded-tl-3xl rounded-br-3xl uppercase text-center px-5 py-3 shadow-md my-4 lg:mb-0 bg-gray-900 text-yellow-50 hover:bg-gray-700 focus:ring-4 focus:ring-yellow-300">Send
-                Message</button>
-            </form>
-            <!-- Form 
-            <form name="contact" data-netlify="true" autocomplete="off" netlify-honeypot="bot-field">
-              <div class="input-animated">
-                <input type="text" id="name" name="name" required pattern="\S+.*" placeholder="the placeholder" />
-                <label htmlFor="name" class="label-name"><span class="content-name">Name</span></label>
-              </div>
-              <div class="input-animated">
-                <input type="email" id="email" name="email" required placeholder="the placeholder" />
-                <label htmlFor="email" class="label-email"><span class="content-email">Email</span></label>
-              </div>
-              <div>
-                <textarea name="question" placeholder="Your Question" id="question" cols="30" rows="5" minLength="10"
-                  maxLength="100" required></textarea>
-              </div>
-              <button type="submit" id="submit-button"
-                class="w-full font-semibold rounded-tl-3xl rounded-br-3xl uppercase text-center px-5 py-3 shadow-md my-4 lg:mb-0 bg-gray-900 text-yellow-50 hover:bg-gray-700 focus:ring-4 focus:ring-yellow-300">Send
-                Message</button>
-              <span id="success"
-                class="hidden absolute mt-2 px-4 py-2 font-medium border rounded-sm border-green-500 bg-green-100 text-green-600">Thanks!
-                We'll be in touch soon.</span>
-              <span id="error"
-                class="hidden absolute mt-2 px-4 py-2 font-medium border rounded-sm border-red-500 bg-red-100 text-red-600">Whoops...
-                Something went wrong.</span>
-            </form>-->
-          </div>
+<div id="services" class="services section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+        <div class="section-heading  wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
+          <h4>Let's build <em>something great</em> together</h4>
+          <img src="{% static 'media/heading-line-dec.png' %}" alt="">
+          <p>
+            We're always happy to hear from you, whether you're looking for a new website, need help with your existing one or just fancy a chat about your business needs.
+          </p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</div>
+<div class="container mt-5" style="z-index: 80; position: relative;">
+  <form method="POST" action="{% url 'contact' %}" class="contact-form">
+    {% csrf_token %}
+    {% for field in form %}
+    {{ field }}
+    {% endfor %}
+      <button type="submit" id="submit-button" class="contact-form-btn">
+        Send Message
+      </button>
+    </div>
+  </form>
+</div>
 {% endblock %}

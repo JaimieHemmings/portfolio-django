@@ -38,7 +38,7 @@
             {% endif %}
           </td>
           <td>
-            <a href="#" class="badge bg-secondary">View</a>
+            <a href="{% url 'view_message' message.id %}" class="badge bg-secondary">View</a>
           </td>
           <td>
             <a href="#" class="badge bg-danger">Delete</a>

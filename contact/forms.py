@@ -26,6 +26,8 @@ class ContactForm(forms.ModelForm):
         self.fields['message'].widget.attrs['maxlength'] = 1000
         
         for field in self.fields:
+            # Set classes
+            self.fields[field].widget.attrs['class'] = 'form form-control mt-3 mb-2'
             if self.fields[field].required:
                 placeholder = f'{placeholders[field]} *'
             else:

@@ -1,0 +1,72 @@
+{% extends 'control_panel_base.html' %}
+
+{% block extra_title %} - Control Panel{% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="col-sm-12">
+    <div class="row">
+
+      <div class="col-sm-4">
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col mt-0">
+                <h5>Registered Users</h5>
+                <p>All Users</p>
+              </div>
+              <div class="col-auto">
+                <div class="stat text-primary">
+                  <i class="align-middle" data-feather="users"></i>
+                </div>
+              </div>
+            </div>
+            <h2 class="mt-1 mb-3">{{ total_num_users }}</h2>
+          </div>
+        </div>
+      </div>
+
+        
+      <div class="col-sm-4">
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col mt-0">
+                <h5>Total Articles</h5>
+                <p>Total Published</p>
+              </div>
+              <div class="col-auto">
+                <div class="stat text-primary">
+                  <i class="align-middle" data-feather="file-text"></i>
+                </div>
+              </div>
+            </div>
+            <h2 class="mt-1 mb-3">{{ total_articles }}</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col mt-0">
+                <h5>Unique Visitors</h5>
+                <p>Last Seven Days</p>
+              </div>
+              <div class="col-auto">
+                <div class="stat text-primary">
+                  <i class="align-middle" data-feather="file-text"></i>
+                </div>
+              </div>
+            </div>
+            <h2 class="mt-1 mb-3">{{ total_articles }}</h2>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  {% include 'partials/cp-message-card.html' %}
+</div>
+{% endblock %}

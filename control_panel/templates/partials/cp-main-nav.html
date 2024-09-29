@@ -9,7 +9,9 @@
         <a class="nav-icon dropdown-toggle" href="#" id="messagesDropdown" data-bs-toggle="dropdown">
           <div class="position-relative">
             <i class="align-middle" data-feather="message-square"></i>
+            {% if total_unread_messages > 0 %}
             <span class="indicator">{{ total_unread_messages }}</span>
+            {% endif %}
           </div>
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end py-0" aria-labelledby="messagesDropdown">
@@ -20,7 +22,7 @@
           </div>
           <div class="list-group">
             {% for message in latest_messages %}
-            <a href="#" class="list-group-item">
+            <a href="{% url 'view_message' message.id %}" class="list-group-item">
               <div class="row g-0 align-items-center">
                 <div class="col-10 ps-2">
                   <div class="text-dark">{{ message.name }}</div>

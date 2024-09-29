@@ -9,7 +9,7 @@ def blog(request):
     """
     
     posts = Blog.objects.all().order_by('-date')
-    paginator = Paginator(posts, 3)
+    paginator = Paginator(posts, 10)
     page = request.GET.get('page')
     articles = paginator.get_page(page)
 
