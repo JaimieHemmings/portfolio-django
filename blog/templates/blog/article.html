@@ -3,69 +3,45 @@
 {% block extra_title %} | {{ article.title }} {% endblock %}
 
 {% block content %}
-<section
-  class="main-banner wow fadeIn"
-  id="top" data-wow-duration="1s"
-  data-wow-delay="0.5s"
->
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12 align-self-center">
-        <div class="left-content show-up header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
-          <div class="row">
-            <div class="col-sm-12">
-              <h1 class="mb-2">{{ article.title }}</h1>
-              <p>{{ article.lead_paragraph }}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<article class="section my-5">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12">
-        <p>{{ article.category }}</p>
-        <span class="mx-2 lg:mx-3 font-medium">
-          {{ article.date }}
-        </span>
-      </div>
-      <div class="col-sm-12 p-5">
-        <img
-            class="img-fluid rounded-lg shadow-lg"
-            src="{{ article.main_img.url }}"
-            alt="{{ article.title }}">
-      </div>
-      <div class="col-sm-12">
-        {{ article.first_content|safe|linebreaks }}
-      </div>
-      <div class="col-sm-6">
-          <h2 class="my-5">{{ article.subtitle_one}}</h2>
-          {{ article.second_content|safe|linebreaks }}
-      </div>
-      <div class="col-sm-6">
-        <img
-          class="my-5"
-          src="{{ article.body_img.url }}"
-          alt="{{ article.title }}"
-          > 
-      </div>
-      <div class="col-sm-6 mt-3">
-        <img
-        class="mb-3"
-        src="{{ article.body_img_two.url }}"
-        alt="{{ article.title }}"
-       >
-      </div>
-       <div class="col-sm-6">
-        <h2 class="mb-3">
-          {{ article.subtitle_two }}
-        </h2>
-        {{ article.third_content|safe|linebreaks }}
-       </div>
-    </div>
+<section id="one">
+  <div class="inner">
+    <header class="major">
+      <h1>{{ article.title }}</h1>
+    </header>
+    <span class="image main"><img src="images/pic11.jpg" alt="" /></span>
+    {{ article.lead_paragraph|safe|linebreaks }}
+
+    
+    <h2 class="my-5">{{ article.subtitle_one}}</h2>
+    
+    {{ article.first_content|safe|linebreaks }}
+
+    <img
+      class="mb-3 image fit"
+      src="{{ article.main_img.url }}"
+      alt="{{ article.title }}">
+    
+    {{ article.second_content|safe|linebreaks }}
+
+    <img
+      class="mb-3 image fit"
+      src="{{ article.body_img.url }}"
+      alt="{{ article.title }}"
+    > 
+    
+    <h2 class="mb-3">
+      {{ article.subtitle_two }}
+    </h2>
+
+    <img
+      class="mb-3 image fit"
+      src="{{ article.body_img_two.url }}"
+      alt="{{ article.title }}"
+    >
+    
+    {{ article.third_content|safe|linebreaks }}
+
+    
     {% if article.external_link %}
     <div class="col-sm-12 my-5 border-button">
       <a href="{{ article.external_link }}">
@@ -74,5 +50,5 @@
     </div>
     {% endif %}
   </div>
-</article>
+</section>
 {% endblock %}
