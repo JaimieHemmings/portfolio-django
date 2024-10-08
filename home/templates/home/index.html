@@ -10,10 +10,11 @@
 {% endblock %}
 
 {% block content %}
-
-{% include 'partials/preload.html' %}
-{% include 'partials/main-banner.html' %}
-{% include 'partials/services.html' %}
-{% include 'partials/about-us.html' %}
-
+{% include 'partials/hero.html' %}
+<div id="main">
+  {% include 'partials/blog-feed.html' %}
+  {% include 'partials/bio.html' %}
+</div>
+{% include 'partials/contact-form.html' %}
+{% include 'partials/footer.html' %}
 {% endblock %}

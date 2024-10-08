@@ -1,0 +1,15 @@
+{% load static %}
+
+<section id="one" class="tiles">
+  {% for article in articles %}
+  <article>
+    <span class="image">
+      <img src="{{ article.thumb_img.url }}" alt="{{ article.title }}" />
+    </span>
+    <header class="major">
+      <h3><a href="{% url 'article' article.slug %}" class="link">{{ article.title }}</a></h3>
+      <p>{{ article.exerpt|truncatechars:30 }}</p>
+    </header>
+  </article>
+  {% endfor %}
+</section>

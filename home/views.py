@@ -6,7 +6,7 @@ def index(request):
     View function for the home page.
     """
     # Get latest 3 articles
-    articles = Blog.objects.order_by('-date')[:3]
+    articles = Blog.objects.order_by('-date')[:6]
     context = {
         'articles': articles,
     }
