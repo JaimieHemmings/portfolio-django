@@ -1769,11 +1769,13 @@ input, select, textarea {
 		width: -ms-max-content;
 		width: max-content;
 		margin-bottom: 2em;
+		max-width: 100%;
 	}
 
 		header.major > :first-child {
 			margin-bottom: 0;
 			width: calc(100% + 0.5em);
+			max-width: 100%;
 		}
 
 			header.major > :first-child:after {
@@ -2365,6 +2367,11 @@ input, select, textarea {
 		cursor: default;
 		list-style: none;
 		padding-left: 0;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		margin-top: 2rem;
+		margin-bottom: 2rem;
 	}
 
 		ul.pagination li {

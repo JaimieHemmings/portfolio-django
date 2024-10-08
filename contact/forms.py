@@ -15,7 +15,6 @@ class ContactForm(forms.ModelForm):
             'message': 'What would you like to know?',
          }
         
-        self.fields['name'].widget.attrs['autofocus'] = True
         self.fields['name'].widget.attrs["minlength"] = 2
         self.fields['name'].widget.attrs["maxlength"] = 50
 

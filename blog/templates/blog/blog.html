@@ -6,82 +6,91 @@
 {% endblock %}
 
 {% block content %}
-<div class="services section">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 offset-lg-2">
-        <div class="section-heading  wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
-          <h1>News &amp; Updates</h1>
-          <img src="{% static 'media/heading-line-dec.png' %}" alt="">
-          <p>Keep up to date by checking in every now and then</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<section class="latest-articles container">
-<div class="row">
-{% if articles %}
-{% for article in articles %}
-  <div class="col-lg-4">
-    <a href="{% url 'article' article.slug %}">
-    <div class="pricing-item-pro my-4 bg-white">
-        <span class="price">
-          {{ article.date|date:"m/d" }}
-        </span>
-        <h4>
-          {{ article.title }}
-        </h4>
-        <p>{{ article.category}}</p>
-        <img
-          class="img-fluid mb-5"
-          src="{{ article.thumb_img.url }}"
-          alt="{{ article.title }}"
-        >
-        <p>{{ article.exerpt }}</p>
-      </div>
-    </a>
-  </div>
-  {% endfor %}
-  {% else %}
-  <div class="services section">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 offset-lg-2">
-          <div class="section-heading  wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
-            <h4>There <em>doesn't seem</em> to be anything here yet...</h4>
-            <img src="{% static 'media/heading-line-dec.png' %}" alt="">
-            <p>There's either no articles or something went wrong trying to fetch them, maybe try again in a bit...</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  {% endif %}  
-</div>
-</section>
-  
-  {% if articles.paginator.num_pages > 1 %}
-  <section class="container mt-5">
-    <div class="row">
-      <div class="col-sm-12 d-flex flex-row justify-content-between">
-        {% if articles.has_previous %}
-        <a href="?page={{ articles.previous_page_number }}"><i class="fa fa-arrow-left"></i> Previous Page</a>
-        {% else %}
-        <a class="disabled" href="#"><i class="fa fa-arrow-left"></i> Previous Page</a>
-        {% endif %}
-        
-        <p class="current">
-          Page {{ articles.number }} of {{ articles.paginator.num_pages }}.
-        </p>
-        
-        {% if articles.has_next %}
-        <a href="?page={{ articles.next_page_number }}">Next Page <i class="fa fa-arrow-right"></i></a>
-        {% else %}
-        <a class="disabled" href="#">Next Page <i class="fa fa-arrow-right"></i></a>
-        {% endif %}
+<div id="wrapper">
+  <section id="banner" class="style2">
+    <div class="inner">
+      <header class="major">
+        <h1>News &amp; Updates</h1>
+      </header>
+      <div class="content">
+        <p>From web design insights to in-depth coding tutorials, explore my journey and stay ahead with the latest trends in development, SEO, and digital experiences.</p>
       </div>
     </div>
   </section>
-  {% endif %}
+</div>
+<div id="main">
+
+  <!-- One -->
+    <section id="one">
+      <div class="inner">
+        <header class="major">
+          <h2>Sed amet aliquam</h2>
+        </header>
+        <p>Welcome to my blog, a space where technology, creativity, and innovation come together! I’m Jaimie Hemmings, a full stack developer with a passion for building high-quality, bespoke web solutions. Here, I share insights from my experience in web design, software development, SEO, and more. Whether you’re a fellow developer looking for tips, a business owner seeking digital growth, or simply curious about the latest trends in tech, you’ll find valuable content to help guide your next project. Dive in, explore, and let’s embark on this digital journey together!</p>
+      </div>
+    </section>
+
+    <section id="two" class="spotlights">
+    {% if articles %}
+    {% for article in articles %}
+      <section>
+        <a href="generic.html" class="image">
+          <img src="{{ article.thumb_img.url }}" alt="{{ article.title }}" data-position="center center" />
+        </a>
+        <div class="content">
+          <div class="inner">
+            <header class="major">
+              <h3>{{ article.title }}</h3>
+            </header>
+            <p>{{ article.exerpt }}</p>
+            <ul class="actions">
+              <li><a href="{% url 'article' article.slug %}" class="button">Read More</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      {% endfor %}
+      {% else %}
+      <section>
+        <div class="inner">
+          <header class="major">
+            <h2>It looks so empty...</h2>
+          </header>
+          <p>Seems like there isn't anything to read yet, maybe come back in a little while?</p>
+        </div>
+      </section>
+  {% endif %}  
+    <ul class="pagination">
+      {% if articles.has_previous %}
+      <li><a href="?page=1" class="button small">First</a></li>
+      <li><a href="?page={{ articles.previous_page_number }}" class="button small">Prev</a></li>
+      {% else %}
+      <li><span class="button small disabled">Prev</span></li>
+      <li><span class="button small disabled">Prev</span></li>
+      {% endif %}
+      <li><span class="page">Page {{ articles.number }} of {{ articles.paginator.num_pages }}</span></li>
+      {% if articles.has_next %}      
+      <li><a href="?page={{ articles.next_page_number }}" class="button small">Next</a></li>
+      <li><a href="?page={{ articles.paginator.num_pages }}" class="button small">Last</a></li>
+      {% else %}
+      <li><span class="button small disabled">Next</span></li>
+      <li><span class="button small disabled">Last</span></li>
+      {% endif %}
+    </ul>
+  </section>
+
+  <!-- Three -->
+    <section id="three">
+      <div class="inner">
+        <header class="major">
+          <h2>Great things happen when you collaborate</h2>
+        </header>
+        <p>Ready to bring your digital vision to life? Whether you're launching a new website, building a custom app, or improving your online presence, I'm here to help. With a focus on creating engaging, tailor-made solutions that meet your unique needs, we can collaborate to turn your ideas into reality. Let's connect and make your next development adventure a success!</p>
+        <ul class="actions">
+          <li><a href="{% url 'contact' %}" class="button next">Get Started</a></li>
+        </ul>
+      </div>
+    </section>
+
+  {% include 'partials/footer.html' %}
 {% endblock %}
