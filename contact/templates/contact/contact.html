@@ -2,31 +2,57 @@
 {% load static %}
 {% block title %} | Contact{% endblock %}
 {% block content %}
-<div id="services" class="services section">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 offset-lg-2">
-        <div class="section-heading  wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
-          <h4>Let's build <em>something great</em> together</h4>
-          <img src="{% static 'media/heading-line-dec.png' %}" alt="">
-          <p>
-            We're always happy to hear from you, whether you're looking for a new website, need help with your existing one or just fancy a chat about your business needs.
-          </p>
-        </div>
-      </div>
+<section id="banner">
+  <div class="inner">
+    <header class="major">
+      <h1>Get in Touch!</h1>
+    </header>
+    <div class="content">
+      <p>“No one can whistle a symphony. It takes a whole orchestra to play it.” — H.E. Luccock</p>
     </div>
   </div>
-</div>
-<div class="container mt-5" style="z-index: 80; position: relative;">
-  <form method="POST" action="{% url 'contact' %}" class="contact-form">
-    {% csrf_token %}
-    {% for field in form %}
-    {{ field }}
-    {% endfor %}
-      <button type="submit" id="submit-button" class="contact-form-btn">
-        Send Message
-      </button>
-    </div>
-  </form>
-</div>
+</section>
+<section id="main">
+  <div class="inner">
+    <header class="major">
+      <h2>Ready to make something great?</h2>
+      <p>Please fill out the form below with the details of your project. I will review your submission and get in touch with you to discuss how we can collaborate to bring your vision to life.</p>
+    </header>
+    <form method="POST" action="{% url 'contact' %}" class="contact-form">
+      {% csrf_token %}
+        <div class="fields">
+          <div class="field half">
+            {{ form.name.label_tag }}
+            {{ form.name }}
+            {{ form.name.errors }}
+          </div>
+          <div class="field half">
+            {{ form.email.label_tag }}
+            {{ form.email }}
+            {{ form.email.errors }}
+          </div>
+          <div class="field">
+            {{ form.phone.label_tag }}
+            {{ form.phone}}
+            {{ form.phone.errors }}
+          </div>
+          <div class="field">
+            {{ form.project_info.label_tag }}
+            {{ form.project_info }}
+            {{ form.project_info.errors }}
+          </div>
+          <div class="field">
+            {{ form.additional_info.label_tag }}
+            {{ form.additional_info }}
+            {{ form.additional_info.errors }}
+          </div>
+        </div>
+        <button type="submit" id="submit-button" class="contact-form-btn">
+          Send Message
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+{% include 'partials/footer.html' %}
 {% endblock %}

@@ -1,17 +1,17 @@
 from django.shortcuts import render
 from django.contrib import messages
 
-from .forms import ContactForm
+from .forms import EnquiryForm
 
 def contact(request):
     """
     View function for the home page.
     """
     context = {}
-    form = ContactForm()
+    form = EnquiryForm()
 
     if request.method == 'POST':
-        form = ContactForm(request.POST)
+        form = EnquiryForm(request.POST)
         if form.is_valid():
             form.save()
             messages.success(request, 'Message sent successfully.')
