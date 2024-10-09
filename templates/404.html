@@ -3,19 +3,17 @@
 {% block extra_title %} | Oops! 404 Error!{% endblock%}
 
 {% block content %}
-<div id="pricing" class="pricing-tables">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 offset-lg-2">
-        <div class="section-heading">
-          <h1>404</h1>
-          <img src="{% static 'media/heading-line-dec.png' %}" alt="Decorative Line Image">
-          <p class="text-gray-600 text-center mt-2">
-            Oops! Something went wrong. Please try again later.
-          </p>
-        </div>
-      </div>
+<section id="banner" class="major">
+  <div class="inner">
+    <header class="major">
+      <h1>404 Error!</h1>
+    </header>
+    <div class="content">
+      <p>Looks like that page doesn't exist/</p>
+      <ul class="actions">
+        <li><a href="{% url 'home' %}" class="button next scrolly">Let's go home</a></li>
+      </ul>
     </div>
   </div>
-</div>
+</section>
 {% endblock %}

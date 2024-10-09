@@ -11,16 +11,18 @@ SECRET_KEY = os.environ.get("SECRET_KEY", "abcdefg")
 # SECURITY WARNING: don't run with debug turned on in production!
 if "USE_AWS" in os.environ:
     DEBUG = False
-else:
-    DEBUG = True
 
-ALLOWED_HOSTS = [
-    "127.0.0.1",
-    "localhost",
+    ALLOWED_HOSTS = [
     "www.jaimieh.co.uk",
     "jaimieh.co.uk",
-    ".herokuapp.com",
-]
+    ]
+else:
+    DEBUG = False
+
+    ALLOWED_HOSTS = [
+    "127.0.0.1",
+    ]
+
 
 # Application definition
 
