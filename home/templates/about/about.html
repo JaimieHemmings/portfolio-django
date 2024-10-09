@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_title %}
+  | About
+{% endblock %}
+
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/about.css' %}" />
+{% endblock %}
+
+{% block content %}
+
+<div id="spaceman-wrapper">
+  <div id="spaceman">
+    
+  </div>
+</div>
+<section id="banner" class="major">
+  <div class="inner">
+    <header class="major">
+      <h1>About Me!</h1>
+    </header>
+    <div class="content">
+      <p>I'm an experienced full stack developer that loves to combine logic and creativity</p>
+      <ul class="actions">
+        <li><a href="#two" class="button next scrolly">Read More</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section id="main">
+
+</div>
+{% endblock %}
+
+
+{% block postload_js %}
+  <script type="module" src="{% static 'js/three.js' %}"></script> 
+{% endblock %}

@@ -25,3 +25,10 @@ def index(request):
         'form': form,
     }
     return render(request, 'home/index.html', context)
+
+
+def about(request):
+    """
+    View function for the about page.
+    """
+    return render(request, 'about/about.html')

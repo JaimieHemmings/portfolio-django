@@ -1,0 +1,17 @@
+#spaceman-wrapper {
+  background-image: url('../images/space-background.jpg');
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+#banner {
+  height: 50vh !important;
+}
+
+#banner:after {
+  opacity: 0.6;
+}
