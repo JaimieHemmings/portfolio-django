@@ -45,6 +45,9 @@ const rerender3D = () => {
   if(spaceman) {
     spaceman.rotation.x += 0.002;
     spaceman.rotation.y += 0.001;
+    
+  // When the user scrolls down increment the spaceman y position
+    spaceman.position.z = (window.scrollY / 500);
   }
   if(mixer) mixer.update(0.002);
 };

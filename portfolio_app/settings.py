@@ -10,7 +10,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY", "abcdefg")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 if "USE_AWS" in os.environ:
-    DEBUG = True
+    DEBUG = False
 else:
     DEBUG = True
 
