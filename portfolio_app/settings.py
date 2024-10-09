@@ -17,7 +17,7 @@ if "USE_AWS" in os.environ:
     "jaimieh.co.uk",
     ]
 else:
-    DEBUG = False
+    DEBUG = True
 
     ALLOWED_HOSTS = [
     "127.0.0.1",

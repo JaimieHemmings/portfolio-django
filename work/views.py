@@ -16,3 +16,14 @@ def work(request):
         "articles": articles,
     }
     return render(request, 'work/work.html', context)
+
+
+def work_detail(request, slug):
+    """
+    View function for the work detail page.
+    """
+    portfolio_item = PortfolioItem.objects.get(slug=slug)
+    context = {
+        'portfolio_item': portfolio_item,
+    }
+    return render(request, 'work/work-detail.html', context)

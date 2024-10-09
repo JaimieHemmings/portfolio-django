@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_title %}
+  | Work
+{% endblock %}
+
+{% block postload_js %}
+{% endblock %}
+
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'work/css/main.css' %}" />
+{% endblock %}
+
+{% block content %}
+<section id="banner" style="background-image: url('{{ portfolio_item.thumbnail.url }}');">
+  <div class="inner">
+    <header class="major">
+      <h1>{{ portfolio_item.title }}</h1>
+    </header>
+    <div class="content">
+      <p>{{ portfolio_item.exerpt }}</p>
+    </div>
+  </div>
+</section>
+<section id="main"> 
+  <section>
+    <div class="inner">
+      <p>{{ portfolio_item.description_one|linebreaks }}</p>
+      <img class="image fit" src="{{ portfolio_item.image.url }}" alt="{{ portfolio_item.title }}" />
+      <p>{{ portfolio_item.description_two|linebreaks }}</p>
+      <ul class="actions">
+        {% if portfolio_item.external_link %}
+        <li><a href="{{ portfolio_item.external_link }}" target="_blank" class="button next">View Site</a></li>
+        {% endif %}
+        {% if portfolio_item.github_url %}
+        <li><a href="{% url 'contact' %}" target="_blank" class="button next">View Repo</a></li>
+        {% endif %}
+      </ul>
+    </div>
+  </section>
+</section>
+{% include 'partials/footer.html' %}
+{% endblock %}

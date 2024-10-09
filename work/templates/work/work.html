@@ -27,7 +27,7 @@
 <div id="portfolio">
     {% for item in portfolio_items %}
       <article class="thumb">
-        <a href="#" class="image">
+        <a href="{% url 'work_detail' item.slug %}" class="image">
           <img src="{{ item.thumbnail.url }}" alt="{{ article.title }}" />
         </a>
         <h2>{{ item.title }}</h2>
@@ -61,4 +61,5 @@
   <li><span class="button small disabled">Last</span></li>
   {% endif %}
 </ul>
+{% include 'partials/footer.html' %}
 {% endblock %}

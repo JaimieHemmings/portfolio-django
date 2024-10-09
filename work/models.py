@@ -10,10 +10,13 @@ class PortfolioItem(models.Model):
         return f'portfolio/{filename}'
 
     title = models.CharField(max_length=100, blank=False, null=False)
-    description = models.TextField(blank=False, null=False)
+    description_one = models.TextField(blank=False, null=False)
+    description_two = models.TextField(blank=False, null=False)
+    exerpt = models.TextField(blank=False, null=False)
     image = models.ImageField(upload_to=get_path, blank=False, null=False)
     created_at = models.DateTimeField(auto_now_add=True)
     external_link = models.URLField(blank=True, null=True)
+    github_url = models.URLField(blank=True, null=True)
     thumbnail = models.ImageField(upload_to=get_path, blank=True, null=True)
     slug = models.SlugField(max_length=100, blank=False, null=False)
 
