@@ -29,9 +29,84 @@
     </div>
   </div>
 </section>
-<section id="main">
 
-</div>
+
+<section id="main"> 
+  <section>
+    <div class="inner">
+      <header class="major">
+        <h2>Full Stack Developer</h2>
+      </header>
+      <p>My experience spans a variety of web technologies, including React, JavaScript, Django, and SASS. I’ve had the privilege of working with clients like FStop Photography, where I designed and built their website, and I contributed to the Cardiff Bluebirds Rugby Team's site by developing front-end components and integrating live match data.</p>
+
+      <p>Previously, I worked as a front-end developer at various agencies, collaborating closely with graphic designers to deliver pixel-perfect solutions. My technical support background further developed my troubleshooting and problem-solving skills</p>
+
+      <p>Beyond coding, I’m always exploring new ways to enhance user experience through thoughtful design and seamless interactions. Whether it's through testing tools like Cypress, or diving into new frameworks, I’m committed to continuous learning and delivering value.</p>
+
+      <p>If you’re looking for a developer who can bring creativity, technical expertise, and a client-centered approach to your next project, let’s connect!</p>
+      <ul class="actions">
+        <li><a href="{% url 'contact' %}" class="button next">Contact</a></li>
+      </ul>
+    </div>
+  </section>
+  <section>
+    <div class="inner">
+      <header class="major">
+        <h2>Tech Stack</h2>
+      </header>
+      <p>My technical skills include:</p>
+      <div class="row">        
+        <div class="col-4 col-12-medium">
+          <h3>Front End</h3>
+          <dl>
+            <dt><i class="icon brands alt fa-html5"></i> HTML</dt>
+            <dd>
+              <p></p>
+            </dd>
+            <dt><i class="icon brands alt fa-css3"></i> CSS</dt>
+            <dd>
+              <p></p>
+            </dd>
+            <dt><i class="icon brands alt fa-js"></i> JavaScript</dt>
+            <dd>
+              <p></p>
+            </dd>
+            <dt><i class="icon brands alt fa-react"></i> React</dt>
+            <dd>
+              <p></p>
+            </dd>
+          </dl>
+        </div>
+        <div class="col-4 col-12-medium">
+          <h3>Back End</h3>
+          <dl>
+            <dt><i class="icon brands alt fa-python"></i> Python</dt>
+            <dd>
+              <p></p>
+            </dd>
+            <dt><i class="icon solid alt fa-database"></i> PostGreSQL</dt>
+            <dd>
+              <p></p>
+            </dd>
+          </dl>
+        </div>
+        <div class="col-4 col-12-medium">
+          <h3>Testing</h3>
+          <dl>
+            <dt><i class="icon solid alt fa-vial"></i> Cypress</dt>
+            <dd>
+              <p></p>
+            </dd>
+            <dt><i class="icon solid alt fa-vial"></i> Jest</dt>
+            <dd>
+              <p></p>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% include 'partials/footer.html' %}
 {% endblock %}
 
 
