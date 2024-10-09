@@ -11,7 +11,7 @@ const scene = new THREE.Scene();
 var spaceman;
 let mixer;
 const loader = new GLTFLoader();
-loader.load('../static/models/spaceman.glb',
+loader.load('https://jjhemmings-portfolio-bucket.s3.eu-north-1.amazonaws.com/static/models/spaceman.glb',
   function (gltf) {
     spaceman = gltf.scene;
     spaceman.position.x = 0;
