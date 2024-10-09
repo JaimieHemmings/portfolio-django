@@ -6,7 +6,6 @@
 {% endblock %}
 
 {% block postload_js %}
-  <script src="{% static 'work/js/work.js' %}" defer></script>
 {% endblock %}
 
 {% block extra_css %}
@@ -24,15 +23,14 @@
     </div>
   </div>
 </section>
-{% if portolio %}
+{% if portfolio_items %}
 <div id="portfolio">
-    {% for item in portfolio %}
+    {% for item in portfolio_items %}
       <article class="thumb">
         <a href="#" class="image">
-          <img src="images/thumbs/01.jpg" alt="" />
+          <img src="{{ item.thumbnail.url }}" alt="{{ article.title }}" />
         </a>
-        <h2>Magna feugiat lorem</h2>
-        <p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
+        <h2>{{ item.title }}</h2>
       </article>
     {% endfor %}
   </div>
@@ -45,5 +43,22 @@
       </div>
     </div>
   </section>
-{% endif %}
+{% endif %} 
+<ul class="pagination">
+  {% if articles.has_previous %}
+  <li><a href="?page=1" class="button small">First</a></li>
+  <li><a href="?page={{ articles.previous_page_number }}" class="button small">Prev</a></li>
+  {% else %}
+  <li><span class="button small disabled">Prev</span></li>
+  <li><span class="button small disabled">Prev</span></li>
+  {% endif %}
+  <li><span class="page">Page {{ articles.number }} of {{ articles.paginator.num_pages }}</span></li>
+  {% if articles.has_next %}      
+  <li><a href="?page={{ articles.next_page_number }}" class="button small">Next</a></li>
+  <li><a href="?page={{ articles.paginator.num_pages }}" class="button small">Last</a></li>
+  {% else %}
+  <li><span class="button small disabled">Next</span></li>
+  <li><span class="button small disabled">Last</span></li>
+  {% endif %}
+</ul>
 {% endblock %}
