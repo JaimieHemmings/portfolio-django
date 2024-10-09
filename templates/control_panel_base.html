@@ -6,11 +6,17 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="shortcut icon" href="{% static 'img/icons/icon-48x48.png'%}" />
+    <link rel="shortcut icon" href="{% static 'control-panel/img/icons/icon-48x48.png'%}" />
+
     <title>JaimieH - Admin{% block extra_title %}{% endblock %}</title>
-    <link href="{% static 'css/app.css' %}" rel="stylesheet">
+
+    <link href="{% static 'control-panel/css/app.css' %}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <script
+      src="{% static 'control-panel/js/app.js' %}"></script>
   </head>
   <body>
     <div class="wrapper">
@@ -25,6 +31,5 @@
         {% include 'partials/cp-footer.html' %}
       </div>
     </div>  
-    <script src="{% static 'js/app.js' %}"></script>  
   </body>  
   </html>
