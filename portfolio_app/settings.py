@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "contact",
     "blog",
     "services",
+    "work",
 
     #Control Panel
     "control_panel",

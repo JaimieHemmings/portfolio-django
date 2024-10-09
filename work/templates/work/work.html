@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_title %}
+  | Work
+{% endblock %}
+
+{% block postload_js %}
+  <script src="{% static 'work/js/work.js' %}" defer></script>
+{% endblock %}
+
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'work/css/main.css' %}" />
+{% endblock %}
+
+{% block content %}
+<section id="banner">
+  <div class="inner">
+    <header class="major">
+      <h1>My Work</h1>
+    </header>
+    <div class="content">
+      <p>As a passionate full stack developer, I thrive on transforming ideas into functional, user-friendly web applications. My portfolio showcases a diverse range of projects that highlight my skills in front-end and back-end development.</p>
+    </div>
+  </div>
+</section>
+{% if portolio %}
+<div id="portfolio">
+    {% for item in portfolio %}
+      <article class="thumb">
+        <a href="#" class="image">
+          <img src="images/thumbs/01.jpg" alt="" />
+        </a>
+        <h2>Magna feugiat lorem</h2>
+        <p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
+      </article>
+    {% endfor %}
+  </div>
+  {% else %}
+  <section>
+    <div class="inner">
+      <div class="content">
+        <h2>Nothing here yet...</h2>
+        <p>This section hasn't finished cooking just yet, come back in a bit?</p>
+      </div>
+    </div>
+  </section>
+{% endif %}
+{% endblock %}
