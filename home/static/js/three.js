@@ -42,8 +42,10 @@ scene.add(topLight);
 const rerender3D = () => {
   requestAnimationFrame(rerender3D);
   renderer.render(scene, camera);
-  spaceman.rotation.x += 0.002;
-  spaceman.rotation.y += 0.001;
+  if(spaceman) {
+    spaceman.rotation.x += 0.002;
+    spaceman.rotation.y += 0.001;
+  }
   if(mixer) mixer.update(0.002);
 };
 
