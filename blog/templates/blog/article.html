@@ -3,52 +3,43 @@
 {% block extra_title %} | {{ article.title }} {% endblock %}
 
 {% block content %}
-<section id="one">
+<section id="banner" style="background-image:url({{ article.body_img.url }})">
   <div class="inner">
     <header class="major">
       <h1>{{ article.title }}</h1>
     </header>
-    <span class="image main"><img src="images/pic11.jpg" alt="" /></span>
+    <div class="content">
+      <p>{{ article.exerpt}}</p>
+    </div>
+  </div>
+</section>
+<section id="one">
+  <div class="inner">
     {{ article.lead_paragraph|safe|linebreaks }}
-
-    
     <h2 class="my-5">{{ article.subtitle_one}}</h2>
-    
     {{ article.first_content|safe|linebreaks }}
-
     <img
       class="mb-3 image fit"
       src="{{ article.main_img.url }}"
       alt="{{ article.title }}">
-    
     {{ article.second_content|safe|linebreaks }}
-
-    <img
-      class="mb-3 image fit"
-      src="{{ article.body_img.url }}"
-      alt="{{ article.title }}"
-    > 
-    
     <h2 class="mb-3">
       {{ article.subtitle_two }}
     </h2>
-
-    <img
-      class="mb-3 image fit"
-      src="{{ article.body_img_two.url }}"
-      alt="{{ article.title }}"
-    >
-    
     {{ article.third_content|safe|linebreaks }}
-
-    
     {% if article.external_link %}
-    <div class="col-sm-12 my-5 border-button">
+    <div class="col-sm-12 my-5 border-button pb-3">
       <a target="_blank" href="{{ article.external_link }}">
         View Site <i class="fa fa-arrow-right"></i>
       </a>
     </div>
     {% endif %}
+    <img
+      class="image fit"
+      style="margin-top: 3rem;"
+      src="{{ article.body_img_two.url }}"
+      alt="{{ article.title }}"
+    >
   </div>
 </section>
 <section id="three">
