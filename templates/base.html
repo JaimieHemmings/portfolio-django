@@ -110,11 +110,13 @@
 
   {% block content %}
   {% endblock %}
-    
+
+  {% include 'partials/cookie-banner.html' %}
+
   </div>
 
   {% block postload_js %}
   {% endblock %}
-
+  <script src="{% static 'js/cookie-consent.js'%}" defer></script>
 </body>
 </html>
