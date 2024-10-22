@@ -12,4 +12,5 @@ urlpatterns = [
     path('services/', include('services.urls')),
     path('control-panel/', include('control_panel.urls')),
     path('work/', include('work.urls')),
+    path('ckeditor/', include('ckeditor_uploader.urls')),  # CKEditor URLs
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
