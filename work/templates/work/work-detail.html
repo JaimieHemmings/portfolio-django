@@ -26,9 +26,9 @@
 <section id="main"> 
   <section>
     <div class="inner">
-      <p>{{ portfolio_item.description_one|linebreaks }}</p>
+      <p>{{ portfolio_item.description_one|safe }}</p>
       <img class="image fit" src="{{ portfolio_item.image.url }}" alt="{{ portfolio_item.title }}" />
-      <p>{{ portfolio_item.description_two|linebreaks }}</p>
+      <p>{{ portfolio_item.description_two|safe }}</p>
       <ul class="actions">
         {% if portfolio_item.external_link %}
         <li><a href="{{ portfolio_item.external_link }}" target="_blank" class="button next">View Site</a></li>
