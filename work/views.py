@@ -7,7 +7,7 @@ def work(request):
     """
     View function for the home page.
     """
-    portfolio_items = PortfolioItem.objects.all()
+    portfolio_items = PortfolioItem.objects.all().order_by('-created_at')
     paginator = Paginator(portfolio_items, 3)
     page = request.GET.get('page')
     articles = paginator.get_page(page)
